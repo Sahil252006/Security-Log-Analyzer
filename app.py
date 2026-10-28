@@ -18,25 +18,113 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+
+/* Main dashboard background */
 .stApp {
     background-color: #0b1120;
-    color: white;
+    color: #f8fafc;
 }
 
+/* Sidebar */
 [data-testid="stSidebar"] {
     background-color: #111827;
 }
 
-div[data-testid="stMetric"] {
-    background-color: #172033;
-    padding: 18px;
-    border-radius: 12px;
-    border: 1px solid #293548;
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span {
+    color: #e2e8f0 !important;
 }
 
-h1, h2, h3 {
-    color: #38bdf8;
+/* Main headings */
+.stApp h1,
+.stApp h2,
+.stApp h3 {
+    color: #38bdf8 !important;
 }
+
+/* Normal paragraph text */
+.stApp p {
+    color: #e2e8f0;
+}
+
+/* Security overview metric cards */
+[data-testid="stMetric"] {
+    background-color: #172033;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+/* Metric labels: Total Events, Failed Logins, etc. */
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] p {
+    color: #cbd5e1 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+/* Metric numbers: 20, 12, 5, etc. */
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] div {
+    color: #ffffff !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+/* Information and warning boxes */
+[data-testid="stAlert"] {
+    background-color: #172b49 !important;
+    border: 1px solid #2563eb;
+    border-radius: 10px;
+}
+
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] div {
+    color: #f1f5f9 !important;
+}
+
+/* Data tables */
+[data-testid="stDataFrame"] {
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+/* Input labels */
+.stApp label {
+    color: #e2e8f0 !important;
+}
+
+/* Download buttons */
+.stDownloadButton button {
+    background-color: #0284c7;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.stDownloadButton button:hover {
+    background-color: #0369a1;
+    color: #ffffff !important;
+}
+
+/* Mobile-friendly spacing */
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1.2rem 1rem;
+    }
+
+    .stApp h1 {
+        font-size: 2rem !important;
+    }
+
+    [data-testid="stMetricValue"],
+    [data-testid="stMetricValue"] div {
+        font-size: 26px !important;
+    }
+}
+
 </style>
 """, unsafe_allow_html=True)
 
